@@ -1,78 +1,39 @@
-console.log("hello");
-console.log("Kya Bolti Public");
-// Variable
-fullName = "Surya Nair";
-console.log(fullName);
-age = 20;
-// to print variable with texts
-console.log(`Name : ${fullName} | Age : ${age}`);
+//Lecture 4
+//Arrays And Methods
 
-// recommended
-console.log("Name : "+fullName+" | Age : "+age);
-
-console.log("Name :",fullName,"| Age :",age);
-
-
-// decaled : it means giving same same of variable.
-// update : it means updating values of variable.
-
-// var : Variable can be re-declared & updated. A global scope variable
-// let : Variable cannot be re-declared but can be updated. A block scope variable.
-// const : Variable cannot re-declared or updated. A block scope vaiable.
-
-// Data Types :
-// primitives type : number,string,boolean,undefined,null,bigint,symbol
-// non-primities types : objects --> arrays, functions
-console.log(typeof age);
-console.log(typeof fullName);
-let num = String("24");
-console.log(typeof num);
-
-// object 
-const Student = {
-    // key : value
-    firstName : "Surya",
-    lastName : "Nair",
-    age : 20,
-    score : 65,
-    isPass : true,
-};
-console.log(Student);
-console.log(typeof Student);
-console.log(Student["firstName"]);
-console.log(Student.lastName);
-
-const instaProfile = {
-    username : "shradhakhapra",
-    posts : 195,
-    followers : 569000000,
-    follwing : 4,
-    isFollow : true,
-};
-console.log(instaProfile);
-
-// guess game
-let gameNum = 25;
-let userNum = prompt("Guess Number : ");
-while(userNum != gameNum){
-    userNum = prompt("Guess Again : ");   
+let marks = [25,15,12,42,55,5];
+// for loop
+for(let i = 0;i<marks.length;i++){
+    console.log(marks[i]);
 }
 
-console.log("You Guessed It Correct!");
+// for-in
+for(i in marks){
+    console.log(i);
+}
 
-// Strings
-let str1 = "Vishal";
-let str2 = "Yadav";
-let strLen = str1.length;
-let strInd = str1[0];
-console.log(`String Length : ${strLen}`);
-console.log(`String Index 0 : ${strInd}`);
+// for-of (better use for-of for array)
+for(i of marks){
+    console.log(i);
+}
 
-// String methods : str.toUpperCase()   str.toLowerCase()   str.trim() (remove whitespaces)
-// str.slice(start,end)     str1.concat(str2)(join str2 with str1)  str.replace(searchVal,newVal)   str.charAt(idx)
-console.log(str1.charAt(5));
+// practice: to find average of array nums
+let arrNum = [12,45,26,35,15,25];
+let sum = 0;
+for(let i=0;i<arrNum.length;i++){
+    sum += arrNum[i];
+}
+let avg = sum/arrNum.length;
+console.log(`Average : ${avg}`);
 
-let uN = prompt("Enter Full Name : ");
-let u = uN.replace(" ","");
-let id = '@' + u + u.length;
-console.log(`userId : ${id}`);
+// arr = [250,645,300,900,50] replace this numbers after giving 10% off
+let arr = [250,645,300,900,50];
+for(let i=0;i<arr.length;i++){
+    arr[i] -= (arr[i]*0.1);
+}
+console.log(arr);
+
+// Array Methods:
+// push():add to end    pop():delete from end & return      toString():converts array to string
+arr.toString();
+console.log(typeof arr[0]);

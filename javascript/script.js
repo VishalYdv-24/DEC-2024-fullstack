@@ -50,3 +50,29 @@ const instaProfile = {
     isFollow : true,
 };
 console.log(instaProfile);
+
+// guess game
+let gameNum = 25;
+let userNum = prompt("Guess Number : ");
+while(userNum != gameNum){
+    userNum = prompt("Guess Again : ");   
+}
+
+console.log("You Guessed It Correct!");
+
+// Strings
+let str1 = "Vishal";
+let str2 = "Yadav";
+let strLen = str1.length;
+let strInd = str1[0];
+console.log(`String Length : ${strLen}`);
+console.log(`String Index 0 : ${strInd}`);
+
+// String methods : str.toUpperCase()   str.toLowerCase()   str.trim() (remove whitespaces)
+// str.slice(start,end)     str1.concat(str2)(join str2 with str1)  str.replace(searchVal,newVal)   str.charAt(idx)
+console.log(str1.charAt(5));
+
+let uN = prompt("Enter Full Name : ");
+let u = uN.replace(" ","");
+let id = '@' + u + u.length;
+console.log(`userId : ${id}`);

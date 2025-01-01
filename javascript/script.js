@@ -1,37 +1,50 @@
-// let header = document.getElementById("heading");
-// console.log(header);
-// console.dir(header);
-// let tagname = document.getElementsByTagName("h1");
-// console.dir(tagname);
+/**
+Attribute : to get attribute tags
+getAttribute(attr) //to get the attribute value.
+setAttribute(attr,value) //to set the attribute value.
+
+Style : to get style of elements
+node.style
+ */
+let ele = document.querySelector("div");
+console.log(ele.setAttribute("class","vis"));
+ele.style.backgroundColor = "green";
 
 
-// // Query Selector
-// // document.querySelector( #id/.class/tag ) to get the first element with the tag/class/id
-// // document.querySelectorAll( #id/.class/tag ) to get all the element with same tag/class/id
-// let elements = document.querySelector(".head");
-// console.log(elements);
 
-// let allElements = document.querySelectorAll(".head");
-// console.log(allElements);
 
-// // Properties
-// /*
-// tagName : returns tag for element nodes.
-// innerText : returns the text content of the element and all its children.
-// innerHTML : returns the plain text or HTML contents in the element. (with all tags same as html file)
-// textContent : returns textual content even for hidden elements.
-// */
-// // console.log(elements.tagName);
-// // console.log(elements.innerText);
-// // console.log(elements.innerHTML);
-// console.log(elements.textContent);
-// elements.innerText = "Bhavan's Junior College";
 
-let element = document.querySelector("h2");
-element.innerText = element.innerText + " from Apna College Student.";
+/**
+//  CREATE ELEMENT 
+document.createElement( ele/tag_name );
 
-let num = 0;
-for(divs of document.querySelectorAll(".box")){
-    console.log(divs.innerText = "New Unique Value "+num);
-    num++;
-}
+// INSERT ELEMENTS
+node.append( el ) : adds at the end of node (inside).
+node.prepend( el ) : adds at the start of the node (outside).
+node.before( el ) : adds brfore the node (outside)
+node.after( el ) : adds after the node (outside)
+
+// DELETE ELEMENTS
+node.remove() : removes the node
+ */
+
+let newButton = document.createElement("button");
+newButton.innerText = "Click Me!";
+
+let divEle = document.querySelector("div");
+// divEle.append(newButton);
+// divEle.prepend(newButton);
+// divEle.before(newButton);
+// divEle.after(newButton);
+
+newButton.style.color = "white";
+newButton.style.backgroundColor = "red";
+
+let newPara = document.createElement("p");
+newPara.innerText = "This New para made from javaScript.";
+
+divEle.append(newPara);
+newPara.remove();
+
+let bodyTag = document.querySelector("body");
+bodyTag.prepend(newButton);

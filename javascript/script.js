@@ -1,50 +1,77 @@
-/**
-Attribute : to get attribute tags
-getAttribute(attr) //to get the attribute value.
-setAttribute(attr,value) //to set the attribute value.
-
-Style : to get style of elements
-node.style
+/*
+Events : the change in the state of an object is known as an Event, Event are fired to notify code of "interesting changes" that may affect code extension.
+. mouse events(click,double click etc)
+. keyboard events(keypress, keyup,keydown)
+. form events(submit etc)
+. print event & many more.
  */
-let ele = document.querySelector("div");
-console.log(ele.setAttribute("class","vis"));
-ele.style.backgroundColor = "green";
+// EVENT HANDLING IN JS
+// node.event = () => {
+//      write code  
+// }
 
+let divele = document.querySelector("div");
+divele.onmouseover = () => {
+    console.log("surya nair");
+}
 
+// EVENT OBJECT
 
-
+let clickMe = document.querySelector("#btn");
+clickMe.onclick = (eve) => {
+    console.log(eve);
+    console.log(eve.type);
+    console.log(eve.target);
+    console.log(eve.clientX, eve.clientY);
+}
 
 /**
-//  CREATE ELEMENT 
-document.createElement( ele/tag_name );
+EVENT LISTENERS
 
-// INSERT ELEMENTS
-node.append( el ) : adds at the end of node (inside).
-node.prepend( el ) : adds at the start of the node (outside).
-node.before( el ) : adds brfore the node (outside)
-node.after( el ) : adds after the node (outside)
+node.addEventListener(event,callback)
 
-// DELETE ELEMENTS
-node.remove() : removes the node
+node.removeEventListener(event,callback)
  */
 
-let newButton = document.createElement("button");
-newButton.innerText = "Click Me!";
+let friend = document.querySelector("#isfriend");
+friend.addEventListener("click",() => {
+    console.log(friend.innerText,"is your friend.");
+})
 
-let divEle = document.querySelector("div");
-// divEle.append(newButton);
-// divEle.prepend(newButton);
-// divEle.before(newButton);
-// divEle.after(newButton);
+let notfriend = document.querySelector("#notfriend");
+notfriend.addEventListener("click",(evt) => {
+    console.log(notfriend.innerText,"is not your friend.");
+    // console.log(evt);
+})
 
-newButton.style.color = "white";
-newButton.style.backgroundColor = "red";
+notfriend.addEventListener("click",(evt) => {
+    console.log(notfriend.innerText,"is motherfucker.");
+    // console.log(evt);
+})
 
-let newPara = document.createElement("p");
-newPara.innerText = "This New para made from javaScript.";
+let handler3 = (evt) => {
+    console.log(notfriend.innerText,"is nepali bsdk.");
+    console.log(evt);
+}
 
-divEle.append(newPara);
-newPara.remove();
+notfriend.addEventListener("click",handler3)
 
-let bodyTag = document.querySelector("body");
-bodyTag.prepend(newButton);
+notfriend.removeEventListener("click",handler3)
+
+
+// PRACTICE QUESTION 
+let chngMode = document.querySelector("#chngMode");
+let page = document.querySelector("body");
+let text = document.querySelector("#modeText");
+chngMode.addEventListener("click",() => {
+    if(chngMode.textContent === "ON"){
+        chngMode.textContent = "OFF";
+        page.style.backgroundColor = "black";
+        text.style.color = "white";
+    }
+    else if(chngMode.textContent === "OFF"){
+        chngMode.textContent = "ON";
+        page.style.backgroundColor = "white";
+        text.style.color = "black";
+    }
+})

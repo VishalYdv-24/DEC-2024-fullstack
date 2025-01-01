@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document Object Model: Part 2</title>
+    <title>Lecture 8 : Events</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="box">Document Object Model : Part 2
-        <ul>List
-            <li>item1</li>
-            <li>item2</li>
-            <li>item3</li>
-        </ul>
+    <!-- INLINE EVENT HANDLING -->
+    <button id="btn" onclick="console.log('Hello');">Click Me!</button>
+     <button ondblclick="console.log('Hello2')">Click 2 Time</button>
+     <div id="mydiv" onmouseover="console.log('u r inside div')">Hello</div>
+     <button id="isfriend">Surya</button>
+     <button id="notfriend">Shubham</button>
+     
+     <!-- PRACTICE QUESTION -->
+      <br><br><br>
+      <div id="modeDiv">
+        <span id="modeText">DARK MODE:</span>
+      <button id="chngMode">ON</button>
     </div>
-    <p>This is written in para Tag</p>
     <script src="script.js"></script>
+
 </body>
 </html>

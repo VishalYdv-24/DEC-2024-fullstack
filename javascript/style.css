@@ -1,0 +1,22 @@
+/* *{
+    background-color: black;
+}
+.head {
+    color: red;
+    background-color: black;
+}
+#heading3{
+    color: bisque;
+}
+button{
+    background-color: white;
+} */
+
+.box{
+    height: 50px;
+    width: 100%;
+    background-color: black;
+    color: aliceblue;
+    margin: 5px;
+    text-align: center;
+}
